@@ -25,14 +25,14 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            background: linear-gradient(135deg, #ff69b4, #ffc0cb);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(255,105,180,0.3);
         }
         
         nav {
@@ -69,7 +69,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(255,107,107,0.9), rgba(255,165,0,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f0f8ff" width="1200" height="800"/><circle fill="%23ffb6c1" cx="200" cy="200" r="50" opacity="0.6"/><circle fill="%23ffd700" cx="800" cy="150" r="30" opacity="0.7"/><circle fill="%23ff69b4" cx="1000" cy="300" r="40" opacity="0.5"/><circle fill="%23ffa500" cx="300" cy="500" r="25" opacity="0.8"/></svg>');
+            background: linear-gradient(135deg, rgba(255,105,180,0.9), rgba(255,192,203,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23ffffff" width="1200" height="800"/><circle fill="%23ffb6c1" cx="200" cy="200" r="50" opacity="0.6"/><circle fill="%23ff69b4" cx="800" cy="150" r="30" opacity="0.7"/><circle fill="%23ffc0cb" cx="1000" cy="300" r="40" opacity="0.5"/><circle fill="%23ff1493" cx="300" cy="500" r="25" opacity="0.8"/></svg>');
             background-size: cover;
             background-position: center;
             padding: 120px 0 80px;
@@ -96,7 +96,7 @@
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ff1744, #ff6b6b);
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
             color: white;
             padding: 1rem 2rem;
             font-size: 1.2rem;
@@ -104,19 +104,19 @@
             border-radius: 50px;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255,23,68,0.4);
+            box-shadow: 0 4px 15px rgba(255,20,147,0.4);
             animation: fadeInUp 1s ease-out 0.4s both;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255,23,68,0.6);
+            box-shadow: 0 6px 20px rgba(255,20,147,0.6);
         }
         
         /* Productos Section */
         .productos {
             padding: 80px 0;
-            background: #f8f9fa;
+            background: #fdf9ff;
         }
         
         .section-title {
@@ -131,7 +131,7 @@
             content: '';
             width: 100px;
             height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            background: linear-gradient(45deg, #ff69b4, #ffc0cb);
             display: block;
             margin: 1rem auto;
             border-radius: 2px;
@@ -162,7 +162,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,107,107,0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255,105,180,0.1), transparent);
             transform: rotate(45deg);
             transition: all 0.5s ease;
             opacity: 0;
@@ -199,12 +199,31 @@
         .precio {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ff6b6b;
+            color: #ff69b4;
             margin-bottom: 1rem;
         }
         
         .personalizar-btn {
-            background: linear-gradient(45deg, #ffa500, #ff6b6b);
+            background: linear-gradient(45deg, #ff69b4, #ffc0cb);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .personalizar-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,105,180,0.4);
+        }
+        
+        .pedido-btn {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
             color: white;
             border: none;
             padding: 0.8rem 1.5rem;
@@ -215,9 +234,9 @@
             font-size: 1rem;
         }
         
-        .personalizar-btn:hover {
+        .pedido-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255,165,0,0.4);
+            box-shadow: 0 5px 15px rgba(255,20,147,0.4);
         }
         
         /* Características Section */
@@ -241,7 +260,7 @@
         .caracteristica-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #ff6b6b;
+            color: #ff69b4;
         }
         
         .caracteristica h4 {
@@ -254,26 +273,202 @@
             color: #666;
         }
         
+        /* Confianza Section */
+        .confianza {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ff69b4, #ffc0cb);
+            color: white;
+        }
+        
+        .confianza-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+        
+        .testimonios-preview {
+            margin: 4rem 0;
+        }
+        
+        .google-reviews-btn {
+            background: rgba(255,255,255,0.9);
+            color: #ff69b4;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .google-reviews-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .reviews-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+        
+        .google-rating {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .rating-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .rating-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .rating-stars {
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+        
+        .reviews-cta {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .leave-review-btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .leave-review-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+        
+        .garantias {
+            margin-top: 4rem;
+        }
+        
+        .garantias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .garantia-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .garantia-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .garantia-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .garantia-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .garantia-item p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
         /* Contact Section */
         .contacto {
             padding: 80px 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #ff69b4, #ffc0cb);
             color: white;
             text-align: center;
         }
         
         .contacto-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         
         .contacto-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
             padding: 2rem;
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contacto-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
         }
         
         .contacto-item h4 {
@@ -283,6 +478,34 @@
         
         .contacto-item p {
             font-size: 1.1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.3);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
         
         /* Footer */
@@ -316,6 +539,10 @@
                 display: none;
             }
             
+            .logo {
+                font-size: 1.2rem;
+            }
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -327,6 +554,51 @@
             .productos-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-btn {
+                width: 80%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .confianza-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .testimonios-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .reviews-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .google-rating, .reviews-cta {
+                padding: 1.5rem;
+            }
+            
+            .rating-number {
+                font-size: 2.5rem;
+            }
+            
+            .garantias-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -334,7 +606,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">🎂 Desayunos Sorpresa Puerto Varas</div>
+            <div class="logo">💖 Desayunos Sorpresa Puerto Varas</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#productos">Desayunos</a></li>
@@ -365,7 +637,10 @@
                     <h3>Desayuno Clásico</h3>
                     <p>Perfecto para cumpleaños tradicionales. Incluye croissants frescos, mermeladas caseras, café premium, jugo natural y una mini torta personalizada con velas.</p>
                     <div class="precio">Desde $18.000</div>
-                    <button class="personalizar-btn" onclick="personalizarDesayuno('clasico')">Personalizar Ahora</button>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                        <button class="personalizar-btn" onclick="contactarWhatsApp('clasico')">💬 WhatsApp</button>
+                        <button class="pedido-btn" onclick="abrirFormulario('clasico')">📋 Hacer Pedido</button>
+                    </div>
                 </div>
 
                 <!-- Desayuno Gourmet -->
@@ -374,7 +649,10 @@
                     <h3>Desayuno Gourmet</h3>
                     <p>La experiencia premium para cumpleaños especiales. Incluye productos artesanales, frutas frescas, quesos selectos, panes especiales y sorpresas exclusivas.</p>
                     <div class="precio">Desde $28.000</div>
-                    <button class="personalizar-btn" onclick="personalizarDesayuno('gourmet')">Personalizar Ahora</button>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                        <button class="personalizar-btn" onclick="contactarWhatsApp('gourmet')">💬 WhatsApp</button>
+                        <button class="pedido-btn" onclick="abrirFormulario('gourmet')">📋 Hacer Pedido</button>
+                    </div>
                 </div>
 
                 <!-- Desayuno Dulce -->
@@ -383,7 +661,10 @@
                     <h3>Desayuno Dulce</h3>
                     <p>Ideal para los amantes de lo dulce en su día especial. Pancakes, muffins, chocolates, helado, frutas con chocolate y sorpresas azucaradas.</p>
                     <div class="precio">Desde $22.000</div>
-                    <button class="personalizar-btn" onclick="personalizarDesayuno('dulce')">Personalizar Ahora</button>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                        <button class="personalizar-btn" onclick="contactarWhatsApp('dulce')">💬 WhatsApp</button>
+                        <button class="pedido-btn" onclick="abrirFormulario('dulce')">📋 Hacer Pedido</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -418,6 +699,85 @@
         </div>
     </section>
 
+    <!-- Confianza Section -->
+    <section class="confianza">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">La Confianza de Nuestros Clientes</h2>
+            <div class="confianza-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">Clientes Felices<br>Han Confiado en Nosotros</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2020</div>
+                    <div class="stat-text">Operando Desde<br>Más de 4 Años</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-text">Entregas Puntuales<br>Cumplimos Siempre</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-text">Atención al Cliente<br>Siempre Disponibles</div>
+                </div>
+            </div>
+            
+            <div class="testimonios-preview">
+                <div class="testimonios-header">
+                    <h3 style="color: white; text-align: center; margin-bottom: 1rem;">Lo Que Dicen Nuestros Clientes</h3>
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <a href="https://maps.google.com/search/Desayunos+Sorpresa+Puerto+Varas" class="google-reviews-btn" target="_blank">
+                            ⭐ Ver Todas las Reseñas en Google
+                        </a>
+                    </div>
+                </div>
+                <div class="reviews-showcase">
+                    <div class="google-rating">
+                        <div class="rating-display">
+                            <span class="rating-number">4.8</span>
+                            <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                            <div class="rating-text">Basado en reseñas de Google</div>
+                        </div>
+                    </div>
+                    <div class="reviews-cta">
+                        <p style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">
+                            ¿Ya probaste nuestros desayunos? ¡Cuéntanos tu experiencia!
+                        </p>
+                        <a href="https://maps.google.com/search/Desayunos+Sorpresa+Puerto+Varas" class="leave-review-btn" target="_blank">
+                            📝 Dejar una Reseña
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="garantias">
+                <h3 style="color: white; text-align: center; margin-bottom: 2rem;">Nuestras Garantías</h3>
+                <div class="garantias-grid">
+                    <div class="garantia-item">
+                        <div class="garantia-icon">🛡️</div>
+                        <h4>Garantía de Frescura</h4>
+                        <p>Todos nuestros productos se preparan el mismo día de la entrega</p>
+                    </div>
+                    <div class="garantia-item">
+                        <div class="garantia-icon">⏰</div>
+                        <h4>Puntualidad Garantizada</h4>
+                        <p>Si llegamos tarde, te devolvemos el 100% de tu dinero</p>
+                    </div>
+                    <div class="garantia-item">
+                        <div class="garantia-icon">😊</div>
+                        <h4>Satisfacción Total</h4>
+                        <p>Si no quedas 100% satisfecho, reponemos tu pedido gratis</p>
+                    </div>
+                    <div class="garantia-item">
+                        <div class="garantia-icon">📱</div>
+                        <h4>Seguimiento en Tiempo Real</h4>
+                        <p>Te avisamos cuando salimos y cuando llegamos a destino</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contacto" class="contacto">
         <div class="container">
@@ -425,12 +785,12 @@
             <p style="font-size: 1.2rem; margin-bottom: 2rem;">¡Hagamos inolvidable ese cumpleaños especial!</p>
             <div class="contacto-info">
                 <div class="contacto-item">
-                    <h4>📱 WhatsApp</h4>
-                    <p>+56 9 1234 5678</p>
+                    <h4>📱 WhatsApp Business</h4>
+                    <p>+56 9 4162 6855</p>
                 </div>
                 <div class="contacto-item">
                     <h4>📧 Email</h4>
-                    <p>dulcessorpresas@gmail.com</p>
+                    <p>desayunos@puertovaras.cl</p>
                 </div>
                 <div class="contacto-item">
                     <h4>📍 Cobertura</h4>
@@ -441,13 +801,28 @@
                     <p>Lun - Dom: 6:00 - 20:00</p>
                 </div>
             </div>
+            
+            <div class="social-links">
+                <a href="https://wa.me/56941626855" class="social-btn" target="_blank">
+                    💬 WhatsApp Business
+                </a>
+                <a href="https://forms.gle/ejemplo" class="social-btn" target="_blank">
+                    📋 Formulario de Pedido
+                </a>
+                <a href="https://www.instagram.com/desayunosorpresa.pv/" class="social-btn" target="_blank">
+                    📸 Instagram
+                </a>
+                <a href="https://maps.google.com/search/Desayunos+Sorpresa+Puerto+Varas" class="social-btn" target="_blank">
+                    ⭐ Reviews Google
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Dulces Sorpresas Puerto Varas. Hacemos cada cumpleaños inolvidable ❤️</p>
+            <p>&copy; 2025 Desayunos Sorpresa Puerto Varas. Hacemos cada cumpleaños inolvidable 💖</p>
         </div>
     </footer>
 
@@ -466,17 +841,28 @@
             });
         });
 
-        // Personalización de desayunos
-        function personalizarDesayuno(tipo) {
+        // Contacto por WhatsApp Business
+        function contactarWhatsApp(tipo) {
             const mensajes = {
-                'clasico': '¡Hola! Me interesa personalizar el Desayuno Clásico para un cumpleaños. ¿Podrían contarme más sobre las opciones?',
-                'gourmet': '¡Hola! Me interesa personalizar el Desayuno Gourmet para un cumpleaños. ¿Qué opciones premium tienen disponibles?',
-                'dulce': '¡Hola! Me interesa personalizar el Desayuno Dulce para un cumpleaños. ¿Qué sorpresas dulces incluyen?'
+                'clasico': '¡Hola! Me interesa el Desayuno Clásico para un cumpleaños. ¿Podrían contarme más sobre las opciones de personalización?',
+                'gourmet': '¡Hola! Me interesa el Desayuno Gourmet para un cumpleaños. ¿Qué opciones premium tienen disponibles?',
+                'dulce': '¡Hola! Me interesa el Desayuno Dulce para un cumpleaños. ¿Qué sorpresas dulces incluyen?'
             };
             
             const mensaje = encodeURIComponent(mensajes[tipo]);
-            const whatsappUrl = `https://wa.me/56912345678?text=${mensaje}`;
+            const whatsappUrl = `https://wa.me/56941626855?text=${mensaje}`;
             window.open(whatsappUrl, '_blank');
+        }
+
+        // Abrir formulario de pedido
+        function abrirFormulario(tipo) {
+            const formularios = {
+                'clasico': 'https://forms.gle/ejemplo-clasico',
+                'gourmet': 'https://forms.gle/ejemplo-gourmet',
+                'dulce': 'https://forms.gle/ejemplo-dulce'
+            };
+            
+            window.open(formularios[tipo] || 'https://forms.gle/ejemplo', '_blank');
         }
 
         // Animaciones al hacer scroll
