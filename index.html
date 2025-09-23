@@ -41,8 +41,27 @@
             align-items: center;
         }
         
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
@@ -113,6 +132,81 @@
             box-shadow: 0 6px 20px rgba(255,20,147,0.6);
         }
         
+        /* Galería de Fotos en Hero */
+        .hero-gallery {
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .hero-gallery h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        .hero-fotos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-foto-item {
+            background: white;
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            transform: rotate(-2deg);
+        }
+        
+        .hero-foto-item:nth-child(2) {
+            transform: rotate(1deg);
+        }
+        
+        .hero-foto-item:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+        
+        .hero-foto-item:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            z-index: 10;
+            position: relative;
+        }
+        
+        .hero-foto-content {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+        }
+        
+        .hero-foto-placeholder {
+            font-size: 2.5rem;
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-foto-content h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-foto-content p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
         /* Productos Section */
         .productos {
             padding: 80px 0;
@@ -139,7 +233,7 @@
         
         .productos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -155,33 +249,9 @@
             overflow: hidden;
         }
         
-        .producto-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,105,180,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-            opacity: 0;
-        }
-        
-        .producto-card:hover::before {
-            opacity: 1;
-            animation: shine 0.5s ease-in-out;
-        }
-        
         .producto-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .producto-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
         }
         
         .producto-card h3 {
@@ -239,10 +309,55 @@
             box-shadow: 0 5px 15px rgba(255,20,147,0.4);
         }
         
+        /* Extras Section */
+        .extras {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .extra-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .extra-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff69b4;
+            box-shadow: 0 10px 25px rgba(255,105,180,0.2);
+        }
+        
+        .extra-card h4 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .extra-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .extra-precio {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff69b4;
+        }
+        
         /* Características Section */
         .caracteristicas {
             padding: 80px 0;
-            background: white;
+            background: #fdf9ff;
         }
         
         .caracteristicas-grid {
@@ -255,12 +370,15 @@
         .caracteristica {
             text-align: center;
             padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
         }
         
-        .caracteristica-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #ff69b4;
+        .caracteristica:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         
         .caracteristica h4 {
@@ -271,6 +389,68 @@
         
         .caracteristica p {
             color: #666;
+        }
+        
+        /* Condiciones de Compra */
+        .condiciones {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .condiciones-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 5px solid #ff69b4;
+        }
+        
+        .condiciones h3 {
+            color: #ff69b4;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .condiciones ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .condiciones li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .condiciones li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff69b4;
+            font-weight: bold;
+        }
+        
+        .advertencia {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .advertencia h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .advertencia p {
+            color: #856404;
+            font-weight: 500;
         }
         
         /* Confianza Section */
@@ -401,47 +581,6 @@
             box-shadow: 0 5px 15px rgba(255,215,0,0.4);
         }
         
-        .garantias {
-            margin-top: 4rem;
-        }
-        
-        .garantias-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .garantia-item {
-            text-align: center;
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .garantia-item:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.15);
-        }
-        
-        .garantia-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .garantia-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .garantia-item p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-        
         /* Contact Section */
         .contacto {
             padding: 80px 0;
@@ -528,11 +667,6 @@
             }
         }
         
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
-        }
-        
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -540,7 +674,7 @@
             }
             
             .logo {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             
             .hero-content h1 {
@@ -579,10 +713,6 @@
                 font-size: 2.5rem;
             }
             
-            .testimonios-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .reviews-showcase {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -596,8 +726,23 @@
                 font-size: 2.5rem;
             }
             
-            .garantias-grid {
+            .condiciones-content {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .hero-fotos-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .hero-foto-item {
+                transform: rotate(0deg) !important;
+            }
+            
+            .hero-foto-content {
+                min-height: 200px;
+                padding: 1.5rem;
             }
         }
     </style>
@@ -606,10 +751,16 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">💖 Desayunos Sorpresa Puerto Varas</div>
+            <div class="logo-container">
+                <div class="logo-image">
+                    [LOGO]
+                </div>
+                <div class="logo">Desayunos Sorpresa Puerto Varas</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#productos">Desayunos</a></li>
+                <li><a href="#extras">Extras</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -619,9 +770,37 @@
     <section id="inicio" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>¡Sorprende en su Cumpleaños!</h1>
-                <p>Desayunos personalizados que hacen de cada cumpleaños un momento inolvidable en Puerto Varas</p>
-                <a href="#productos" class="cta-button">Ver Desayunos 🎁</a>
+                <h1>¡Sorprende en ocasiones especiales!</h1>
+                <p>Desayunos personalizados que hacen de cada celebración un momento inolvidable en Puerto Varas</p>
+                <a href="#productos" class="cta-button">Ver desayunos</a>
+                
+                <!-- Galería de Fotos en Hero -->
+                <div class="hero-gallery">
+                    <h3>Nuestros desayunos especiales</h3>
+                    <div class="hero-fotos-grid">
+                        <div class="hero-foto-item">
+                            <div class="hero-foto-content">
+                                <div class="hero-foto-placeholder">📷</div>
+                                <h4>Desayuno clásico</h4>
+                                <p>Aquí irá una foto real del desayuno clásico</p>
+                            </div>
+                        </div>
+                        <div class="hero-foto-item">
+                            <div class="hero-foto-content">
+                                <div class="hero-foto-placeholder">📷</div>
+                                <h4>Desayuno gourmet</h4>
+                                <p>Aquí irá una foto real del desayuno gourmet</p>
+                            </div>
+                        </div>
+                        <div class="hero-foto-item">
+                            <div class="hero-foto-content">
+                                <div class="hero-foto-placeholder">📷</div>
+                                <h4>Desayuno dulce</h4>
+                                <p>Aquí irá una foto real del desayuno dulce</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -629,43 +808,88 @@
     <!-- Productos Section -->
     <section id="productos" class="productos">
         <div class="container">
-            <h2 class="section-title">Nuestros Desayunos de Cumpleaños</h2>
+            <h2 class="section-title">Nuestros desayunos especiales</h2>
             <div class="productos-grid">
                 <!-- Desayuno Clásico -->
                 <div class="producto-card">
-                    <div class="producto-icon">🥐</div>
-                    <h3>Desayuno Clásico</h3>
-                    <p>Perfecto para cumpleaños tradicionales. Incluye croissants frescos, mermeladas caseras, café premium, jugo natural y una mini torta personalizada con velas.</p>
+                    <h3>Desayuno clásico</h3>
+                    <p>Perfecto para celebraciones tradicionales. Incluye croissants frescos, mermeladas caseras, café premium, jugo natural y una mini torta personalizada con velas.</p>
                     <div class="precio">Desde $18.000</div>
                     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
-                        <button class="personalizar-btn" onclick="contactarWhatsApp('clasico')">💬 WhatsApp</button>
-                        <button class="pedido-btn" onclick="abrirFormulario('clasico')">📋 Hacer Pedido</button>
+                        <button class="personalizar-btn" onclick="contactarWhatsApp('clasico')">WhatsApp</button>
+                        <button class="pedido-btn" onclick="abrirFormulario('clasico')">Hacer pedido</button>
                     </div>
                 </div>
 
                 <!-- Desayuno Gourmet -->
                 <div class="producto-card">
-                    <div class="producto-icon">🍓</div>
-                    <h3>Desayuno Gourmet</h3>
-                    <p>La experiencia premium para cumpleaños especiales. Incluye productos artesanales, frutas frescas, quesos selectos, panes especiales y sorpresas exclusivas.</p>
+                    <h3>Desayuno gourmet</h3>
+                    <p>La experiencia premium para ocasiones especiales. Incluye productos artesanales, frutas frescas, quesos selectos, panes especiales y sorpresas exclusivas.</p>
                     <div class="precio">Desde $28.000</div>
                     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
-                        <button class="personalizar-btn" onclick="contactarWhatsApp('gourmet')">💬 WhatsApp</button>
-                        <button class="pedido-btn" onclick="abrirFormulario('gourmet')">📋 Hacer Pedido</button>
+                        <button class="personalizar-btn" onclick="contactarWhatsApp('gourmet')">WhatsApp</button>
+                        <button class="pedido-btn" onclick="abrirFormulario('gourmet')">Hacer pedido</button>
                     </div>
                 </div>
 
                 <!-- Desayuno Dulce -->
                 <div class="producto-card">
-                    <div class="producto-icon">🧁</div>
-                    <h3>Desayuno Dulce</h3>
+                    <h3>Desayuno dulce</h3>
                     <p>Ideal para los amantes de lo dulce en su día especial. Pancakes, muffins, chocolates, helado, frutas con chocolate y sorpresas azucaradas.</p>
                     <div class="precio">Desde $22.000</div>
                     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
-                        <button class="personalizar-btn" onclick="contactarWhatsApp('dulce')">💬 WhatsApp</button>
-                        <button class="pedido-btn" onclick="abrirFormulario('dulce')">📋 Hacer Pedido</button>
+                        <button class="personalizar-btn" onclick="contactarWhatsApp('dulce')">WhatsApp</button>
+                        <button class="pedido-btn" onclick="abrirFormulario('dulce')">Hacer pedido</button>
                     </div>
                 </div>
+
+                <!-- Desayuno Fitness -->
+                <div class="producto-card">
+                    <h3>Desayuno fitness</h3>
+                    <p>Perfecto para quienes cuidan su alimentación. Incluye opciones saludables, frutas frescas, yogurt griego, granola casera, tostadas integrales y jugos naturales.</p>
+                    <div class="precio">Desde $25.000</div>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                        <button class="personalizar-btn" onclick="contactarWhatsApp('fitness')">WhatsApp</button>
+                        <button class="pedido-btn" onclick="abrirFormulario('fitness')">Hacer pedido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extras Section -->
+    <section id="extras" class="extras">
+        <div class="container">
+            <h2 class="section-title">Extras adicionales</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                Agrega estos complementos especiales a tu desayuno con anticipación
+            </p>
+            <div class="extras-grid">
+                <div class="extra-card">
+                    <h4>Flores pequeñas</h4>
+                    <p>Ramo de flores frescas tamaño pequeño para acompañar el desayuno</p>
+                    <div class="extra-precio">+$8.000</div>
+                </div>
+                <div class="extra-card">
+                    <h4>Flores medianas</h4>
+                    <p>Ramo de flores frescas tamaño mediano, perfecto para ocasiones especiales</p>
+                    <div class="extra-precio">+$12.000</div>
+                </div>
+                <div class="extra-card">
+                    <h4>Flores grandes</h4>
+                    <p>Ramo de flores frescas tamaño grande para sorpresas memorables</p>
+                    <div class="extra-precio">+$18.000</div>
+                </div>
+                <div class="extra-card">
+                    <h4>Mini tortas La Prosperina</h4>
+                    <p>Deliciosas mini tortas artesanales de la reconocida pastelería La Prosperina</p>
+                    <div class="extra-precio">+$15.000</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: #666; font-style: italic;">
+                    * Los extras deben solicitarse con al menos 24 horas de anticipación
+                </p>
             </div>
         </div>
     </section>
@@ -673,28 +897,52 @@
     <!-- Características Section -->
     <section class="caracteristicas">
         <div class="container">
-            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
             <div class="caracteristicas-grid">
                 <div class="caracteristica">
-                    <div class="caracteristica-icon">🚚</div>
-                    <h4>Entrega en Puerto Varas</h4>
-                    <p>Llevamos la sorpresa directamente a tu puerta en toda la ciudad de Puerto Varas</p>
+                    <h4>Entrega en toda la región</h4>
+                    <p>Llevamos la sorpresa directamente a tu puerta en Puerto Varas, Alerce, Nueva Braunau, Llanquihue, Puerto Montt y Ensenada</p>
                 </div>
                 <div class="caracteristica">
-                    <div class="caracteristica-icon">🎨</div>
-                    <h4>100% Personalizable</h4>
-                    <p>Adaptamos cada desayuno según los gustos y preferencias del cumpleañero</p>
+                    <h4>100% personalizable</h4>
+                    <p>Adaptamos cada desayuno según los gustos y preferencias del homenajeado</p>
                 </div>
                 <div class="caracteristica">
-                    <div class="caracteristica-icon">🌅</div>
-                    <h4>Entrega Temprana</h4>
-                    <p>Llegamos desde las 7:00 AM para hacer especial el despertar en su día</p>
+                    <h4>Horarios flexibles</h4>
+                    <p>Entregamos desde las 6:30 AM hasta las 8:00 PM en rangos de 1 hora</p>
                 </div>
                 <div class="caracteristica">
-                    <div class="caracteristica-icon">💝</div>
-                    <h4>Presentación Especial</h4>
-                    <p>Cada desayuno viene en una presentación única de cumpleaños con decoración temática</p>
+                    <h4>Presentación especial</h4>
+                    <p>Cada desayuno viene en una presentación única con decoración temática</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Condiciones de Compra -->
+    <section class="condiciones">
+        <div class="container">
+            <h2 class="section-title">Condiciones de compra</h2>
+            <div class="condiciones-content">
+                <div class="advertencia">
+                    <h4>⚠️ Importante - Evita estafas</h4>
+                    <p><strong>NUNCA transfiera dinero antes de confirmar su pedido directamente con nosotros.</strong> 
+                    Siempre confirme primero por WhatsApp oficial o nuestros canales oficiales.</p>
+                </div>
+                
+                <h3>Términos y condiciones:</h3>
+                <ul>
+                    <li>Pedidos deben realizarse con mínimo 24 horas de anticipación</li>
+                    <li>Confirmaremos disponibilidad y detalles por WhatsApp antes del pago</li>
+                    <li>El pago se realiza solo después de confirmar el pedido</li>
+                    <li>Aceptamos transferencia bancaria y efectivo contra entrega</li>
+                    <li>Los precios pueden variar según personalización y extras solicitados</li>
+                    <li>Horarios de entrega: 6:30 AM a 8:00 PM en rangos de 1 hora</li>
+                    <li>Cobertura: Puerto Varas, Alerce, Nueva Braunau, Llanquihue, Puerto Montt, Ensenada</li>
+                    <li>En caso de fuerza mayor, se reprograma la entrega sin costo adicional</li>
+                    <li>Cambios en el pedido hasta 12 horas antes de la entrega</li>
+                    <li>Seguimiento en tiempo real el día de la entrega</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -702,32 +950,32 @@
     <!-- Confianza Section -->
     <section class="confianza">
         <div class="container">
-            <h2 class="section-title" style="color: white;">La Confianza de Nuestros Clientes</h2>
+            <h2 class="section-title" style="color: white;">La confianza de nuestros clientes</h2>
             <div class="confianza-stats">
                 <div class="stat-item">
                     <div class="stat-number">500+</div>
-                    <div class="stat-text">Clientes Felices<br>Han Confiado en Nosotros</div>
+                    <div class="stat-text">Clientes felices<br>han confiado en nosotros</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">2020</div>
-                    <div class="stat-text">Operando Desde<br>Más de 4 Años</div>
+                    <div class="stat-text">Operando desde<br>más de 4 años</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">100%</div>
-                    <div class="stat-text">Entregas Puntuales<br>Cumplimos Siempre</div>
+                    <div class="stat-text">Entregas puntuales<br>cumplimos siempre</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-text">Atención al Cliente<br>Siempre Disponibles</div>
+                    <div class="stat-text">Atención al cliente<br>siempre disponibles</div>
                 </div>
             </div>
             
             <div class="testimonios-preview">
                 <div class="testimonios-header">
-                    <h3 style="color: white; text-align: center; margin-bottom: 1rem;">Lo Que Dicen Nuestros Clientes</h3>
+                    <h3 style="color: white; text-align: center; margin-bottom: 1rem;">Lo que dicen nuestros clientes</h3>
                     <div style="text-align: center; margin-bottom: 2rem;">
                         <a href="https://maps.app.goo.gl/eC4FZgPr7jiTNbwm6" class="google-reviews-btn" target="_blank">
-                            ⭐ Ver Todas las Reseñas en Google
+                            Ver todas las reseñas en Google
                         </a>
                     </div>
                 </div>
@@ -744,34 +992,8 @@
                             ¿Ya probaste nuestros desayunos? ¡Cuéntanos tu experiencia!
                         </p>
                         <a href="https://maps.app.goo.gl/eC4FZgPr7jiTNbwm6" class="leave-review-btn" target="_blank">
-                            📝 Dejar una Reseña
+                            Dejar una reseña
                         </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="garantias">
-                <h3 style="color: white; text-align: center; margin-bottom: 2rem;">Nuestras Garantías</h3>
-                <div class="garantias-grid">
-                    <div class="garantia-item">
-                        <div class="garantia-icon">🛡️</div>
-                        <h4>Garantía de Frescura</h4>
-                        <p>Todos nuestros productos se preparan el mismo día de la entrega</p>
-                    </div>
-                    <div class="garantia-item">
-                        <div class="garantia-icon">⏰</div>
-                        <h4>Puntualidad Garantizada</h4>
-                        <p>Si llegamos tarde, te devolvemos el 100% de tu dinero</p>
-                    </div>
-                    <div class="garantia-item">
-                        <div class="garantia-icon">😊</div>
-                        <h4>Satisfacción Total</h4>
-                        <p>Si no quedas 100% satisfecho, reponemos tu pedido gratis</p>
-                    </div>
-                    <div class="garantia-item">
-                        <div class="garantia-icon">📱</div>
-                        <h4>Seguimiento en Tiempo Real</h4>
-                        <p>Te avisamos cuando salimos y cuando llegamos a destino</p>
                     </div>
                 </div>
             </div>
@@ -782,38 +1004,38 @@
     <section id="contacto" class="contacto">
         <div class="container">
             <h2 class="section-title" style="color: white;">Contáctanos</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">¡Hagamos inolvidable ese cumpleaños especial!</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">¡Hagamos inolvidable esa ocasión especial!</p>
             <div class="contacto-info">
                 <div class="contacto-item">
-                    <h4>📱 WhatsApp Business</h4>
+                    <h4>WhatsApp business</h4>
                     <p>+56 9 4162 6855</p>
                 </div>
                 <div class="contacto-item">
-                    <h4>📧 Email</h4>
+                    <h4>Email</h4>
                     <p>desayunos@puertovaras.cl</p>
                 </div>
                 <div class="contacto-item">
-                    <h4>📍 Cobertura</h4>
-                    <p>Todo Puerto Varas</p>
+                    <h4>Cobertura</h4>
+                    <p>Puerto Varas, Alerce, Nueva Braunau, Llanquihue, Puerto Montt, Ensenada</p>
                 </div>
                 <div class="contacto-item">
-                    <h4>🕒 Horarios</h4>
-                    <p>Lun - Dom: 6:00 - 20:00</p>
+                    <h4>Horarios de entrega</h4>
+                    <p>6:30 AM - 8:00 PM<br>(rangos de 1 hora)</p>
                 </div>
             </div>
             
             <div class="social-links">
                 <a href="https://wa.me/56941626855" class="social-btn" target="_blank">
-                    💬 WhatsApp Business
+                    WhatsApp business
                 </a>
                 <a href="https://form.jotform.com/211456405319048" class="social-btn" target="_blank">
-                    📋 Formulario de Pedido
+                    Formulario de pedido
                 </a>
                 <a href="https://www.instagram.com/desayunosorpresa.pv/" class="social-btn" target="_blank">
-                    📸 Instagram
+                    Instagram
                 </a>
                 <a href="https://maps.google.com/search/Desayunos+Sorpresa+Puerto+Varas" class="social-btn" target="_blank">
-                    ⭐ Reviews Google
+                    Reviews Google
                 </a>
             </div>
         </div>
@@ -822,7 +1044,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Desayunos Sorpresa Puerto Varas. Hacemos cada cumpleaños inolvidable 💖</p>
+            <p>&copy; 2025 Desayunos Sorpresa Puerto Varas. Hacemos cada ocasión especial inolvidable</p>
         </div>
     </footer>
 
@@ -844,9 +1066,10 @@
         // Contacto por WhatsApp Business
         function contactarWhatsApp(tipo) {
             const mensajes = {
-                'clasico': '¡Hola! Me interesa el Desayuno Clásico para un cumpleaños. ¿Podrían contarme más sobre las opciones de personalización?',
-                'gourmet': '¡Hola! Me interesa el Desayuno Gourmet para un cumpleaños. ¿Qué opciones premium tienen disponibles?',
-                'dulce': '¡Hola! Me interesa el Desayuno Dulce para un cumpleaños. ¿Qué sorpresas dulces incluyen?'
+                'clasico': '¡Hola! Me interesa el desayuno clásico para una ocasión especial. ¿Podrían contarme más sobre las opciones de personalización?',
+                'gourmet': '¡Hola! Me interesa el desayuno gourmet para una ocasión especial. ¿Qué opciones premium tienen disponibles?',
+                'dulce': '¡Hola! Me interesa el desayuno dulce para una ocasión especial. ¿Qué sorpresas dulces incluyen?',
+                'fitness': '¡Hola! Me interesa el desayuno fitness para una ocasión especial. ¿Qué opciones saludables ofrecen?'
             };
             
             const mensaje = encodeURIComponent(mensajes[tipo]);
@@ -859,7 +1082,8 @@
             const formularios = {
                 'clasico': 'https://forms.gle/ejemplo-clasico',
                 'gourmet': 'https://forms.gle/ejemplo-gourmet',
-                'dulce': 'https://forms.gle/ejemplo-dulce'
+                'dulce': 'https://forms.gle/ejemplo-dulce',
+                'fitness': 'https://forms.gle/ejemplo-fitness'
             };
             
             window.open(formularios[tipo] || 'https://form.jotform.com/211456405319048', '_blank');
@@ -880,7 +1104,7 @@
         }, observerOptions);
 
         // Observar elementos para animar
-        document.querySelectorAll('.producto-card, .caracteristica, .contacto-item').forEach(el => {
+        document.querySelectorAll('.producto-card, .caracteristica, .contacto-item, .extra-card').forEach(el => {
             observer.observe(el);
         });
     </script>
